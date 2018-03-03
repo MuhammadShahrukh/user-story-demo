@@ -2,13 +2,12 @@ var express = require('express');
 var path = require('path');
 var app = express();
 
-app.use(express.static( path.join(__dirname , 'dist') ));
+app.use(express.static( path.join('./dist') ));
 
 app.get('*', (req, res) => {
-    console.log( __dirname );
-    console.log( path.join(__dirname, 'dist/index.html') );
-    
-    res.sendFile(path.join(__dirname, 'dist/index.html'));
+ 
+    console.log(__dirname)
+    res.sendFile( __dirname + '/dist/index.html');
 });
 
 app.listen(process.env.PORT || 3000,function(){
