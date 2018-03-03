@@ -1,9 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Post } from './post';
+import { Observable } from 'rxjs/Observable';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable()
 export class PostService {
 
+    fakeApi : string = 'https://jsonplaceholder.typicode.com/';
+    
     posts : Post[] = [
         {
             id: 1,
@@ -25,12 +29,12 @@ export class PostService {
         }
     ]
 
-    constructor() {
+    constructor(private http : HttpClient) {
 
     }
 
-    public fetchPosts(){
-        return this.posts;
+    public fetchPosts() : Observable<Post[]>{
+        return this.http.get<Post[]>(this.fakeApi+'posts')
     }
 
 }

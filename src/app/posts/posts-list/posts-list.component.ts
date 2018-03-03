@@ -20,8 +20,9 @@ export class PostsListComponent implements OnInit {
     }
 
     fetchPosts(){
-        this.posts = this.postService.fetchPosts();
-        console.log(this.postService.fetchPosts())
+       this.postService.fetchPosts()
+       .subscribe(posts => this.posts=posts);
+       
     }
 
 }
