@@ -1,16 +1,14 @@
 <div>
-    <table class="table">
+    <h3>User Posts</h3>
+    <table class="table" ng-if="posts.length">
         <tr>
             <th>ID</th>
             <th>Title</th>
-            <th>Body</th>
-            <th>UserID</th>
         </tr>
         <tr *ngFor="let post of posts" >
             <td>{{post.id}}</td>
             <td>{{post.title}}</td>
-            <td>{{post.body}}</td>
-            <td>{{post.userId}}</td>
         </tr>
     </table>
+    <p ng-if="!posts.length">Loading...</p>
 </div>

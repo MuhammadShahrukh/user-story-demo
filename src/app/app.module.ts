@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { PostsListComponent } from './posts/posts-list/posts-list.component';
 import { PostService } from './posts/post.service';
 import { HomeComponent } from './home/home.component';
+import { AppRoutingModule } from './app-routing.module';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { HomeComponent } from './home/home.component';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [PostService],
   bootstrap: [AppComponent]
