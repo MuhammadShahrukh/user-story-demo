@@ -5,8 +5,6 @@ var app = express();
 app.use(express.static( __dirname+ '/dist' ));
 
 app.get('*', (req, res) => {
- 
-    console.log(__dirname)
     res.sendFile( __dirname + '/dist/index.html');
 });
 
