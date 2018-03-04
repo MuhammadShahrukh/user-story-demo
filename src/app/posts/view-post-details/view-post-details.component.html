@@ -1,0 +1,7 @@
+<div *ngIf="post" class="post-div" >
+    <h3>{{post.title}}</h3>
+   
+    <p>{{post.body}}</p>
+    <p><span>Post Id : {{post.id}} </span><span> User Id :  {{post.userId}}</span></p>
+</div>
+<p  *ngIf="!post"> Loading...</p>

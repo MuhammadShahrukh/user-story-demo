@@ -1,0 +1,9 @@
+:host /deep/ ng2-smart-table { font-size: large; }
+
+:host /deep/ table {
+    color: #606c71;
+  }
+  :host /deep/ table tr td, :host /deep/ table tr th {
+    border: 1px solid #e9ebec;
+  }
+  

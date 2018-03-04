@@ -1,14 +1,5 @@
 <div>
     <h3>User Posts</h3>
-    <table class="table" ng-if="posts.length">
-        <tr>
-            <th>ID</th>
-            <th>Title</th>
-        </tr>
-        <tr *ngFor="let post of posts" >
-            <td>{{post.id}}</td>
-            <td>{{post.title}}</td>
-        </tr>
-    </table>
-    <p ng-if="!posts.length">Loading...</p>
+    <ng2-smart-table *ngIf="posts.length" (userRowSelect)="showPostDetail($event)" [settings]="settings" [source]="posts" ></ng2-smart-table>
+    <p *ngIf="!posts.length">Loading...</p>
 </div>
